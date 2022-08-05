@@ -1,0 +1,19 @@
+ID: MANOJ_01
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: mdb1
+   type: hdb
+   path: mdb1
+   requires:
+    - name: hdi_mdb1
+
+resources:
+ - name: hdi_mdb1
+   parameters:
+      config:
+         schema: msch
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
